@@ -1,12 +1,14 @@
 package ru.ncedu.beans.managed;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import ru.ncedu.beans.common.SessionLocal;
+import ru.ncedu.beans.common.User;
 
 @ManagedBean
 public class HelloBean implements Serializable{
@@ -16,6 +18,10 @@ public class HelloBean implements Serializable{
 
 	private String login;
 	private String pass;
+	
+	public List<User> getUsers() {
+		return session.getUsers();
+	}
 	
 	public String getLogin() {
 		return login;
